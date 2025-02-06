@@ -5,9 +5,12 @@ from langchain_text_splitters import (CharacterTextSplitter,
 q1_pdf = "OpenSourceLicenses.pdf"
 q2_pdf = "勞動基準法.pdf"
 
-
 def hw02_1(q1_pdf):
-    pass
+    loader = PyPDFLoader(q1_pdf)
+    docs = loader.load()
+    splitter = CharacterTextSplitter(chunk_overlap=0)
+    chunks  = splitter.split_documents(docs)
+    return chunks[len(chunks)-1]
 
 def hw02_2(q2_pdf):
     pass
