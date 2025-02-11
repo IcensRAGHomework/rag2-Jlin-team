@@ -20,9 +20,11 @@ def hw02_2(q2_pdf):
         chunk_size=10,
         chunk_overlap=0,
          separators=[
-           r"第\s*[一二三四五六七八九十\d+-]+ \s*(?:章|條)"
+           r"第 +[一二三四五六七八九十\d+-]+ +(?:章|條)"
         ],
          is_separator_regex=True
         )
     chunks = splitter.split_text(full_text)
     return len(chunks)
+
+#print(hw02_2(q2_pdf))
