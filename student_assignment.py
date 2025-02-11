@@ -13,4 +13,9 @@ def hw02_1(q1_pdf):
     return chunks[len(chunks)-1]
 
 def hw02_2(q2_pdf):
-    pass
+    loader = PyPDFLoader(q2_pdf)
+    docs = loader.load()
+    splitter = RecursiveCharacterTextSplitter(
+        chunk_size=170,chunk_overlap=0)
+    chunks = splitter.split_documents(docs)
+    return len(chunks)
