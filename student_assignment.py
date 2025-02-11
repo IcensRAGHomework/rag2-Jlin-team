@@ -19,3 +19,5 @@ def hw02_2(q2_pdf):
         chunk_size=170,chunk_overlap=0)
     chunks = splitter.split_documents(docs)
     return len(chunks)
+
+print(hw02_2(q2_pdf))
